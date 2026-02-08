@@ -3,13 +3,11 @@ sidebar_position: 3
 title: "Site Configuration"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Site Configuration
 
 Yattee Server uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) as its extraction engine, which supports over 1000 websites. The **Sites** tab in the admin panel controls which of these sites are enabled on your server and how they behave.
 
-<ScreenshotPlaceholder description="Admin panel Sites tab showing the list of configured sites with name, extractor pattern, enabled status, priority, and proxy streaming toggle" />
+![Configured Sites](/img/screenshots/server/sites.png)
 
 ## How Sites Work
 

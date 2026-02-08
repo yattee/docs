@@ -3,8 +3,6 @@ sidebar_position: 1
 title: "Server Settings"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Server Settings
 
 Yattee Server has two layers of configuration:
@@ -14,7 +12,7 @@ Yattee Server has two layers of configuration:
 
 This page documents every runtime setting available in the admin panel.
 
-<ScreenshotPlaceholder description="Admin panel Settings tab showing the runtime configuration form with categorized setting groups" />
+![Server Settings](/img/screenshots/server/settings.png)
 
 :::tip
 Changes to runtime settings take effect immediately. There is no need to restart the server or the Docker container.

@@ -3,8 +3,6 @@ sidebar_position: 2
 title: "Reverse Proxy"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Reverse Proxy
 
 Running Yattee Server behind a reverse proxy allows you to:

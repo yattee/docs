@@ -3,13 +3,11 @@ sidebar_position: 2
 title: "User Management"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # User Management
 
 Yattee Server requires authentication for all API access. Users are managed through the **Users** tab in the admin panel.
 
-<ScreenshotPlaceholder description="Admin panel Users tab showing the user list with username, role, and action buttons for each user" />
+![User Management](/img/screenshots/server/users.png)
 
 ## Roles
 

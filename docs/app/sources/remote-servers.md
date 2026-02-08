@@ -3,8 +3,6 @@ sidebar_position: 4
 title: "Remote Servers"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Remote Servers
 
 Remote servers let you stream video content from YouTube and other platforms through privacy-respecting backends. Instead of connecting to YouTube directly, Yattee routes requests through an intermediary server that fetches the content on your behalf -- keeping your IP address and viewing habits private.
@@ -116,8 +114,6 @@ There are two ways to add a PeerTube instance:
 ### Federated Content
 
 Because PeerTube is decentralized, video IDs are specific to each instance. A video hosted on one PeerTube instance has a different identifier than the same video federated to another instance. This is different from YouTube-based backends where every video has a single global ID.
-
-<ScreenshotPlaceholder description="Instance Browse view showing available backends" platform="iOS" />
 
 ## Feature Comparison
 

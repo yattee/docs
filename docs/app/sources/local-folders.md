@@ -3,8 +3,6 @@ sidebar_position: 2
 title: "Local Folders"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Local Folders
 
 Local folder sources let you browse and play video files stored directly on your device. This is the simplest source type -- point Yattee at a directory and its video contents become available in the Media Browser.
@@ -27,8 +25,6 @@ Local folders are not available on tvOS because the platform does not provide us
 4. Choose a directory using the system file picker
 5. Give the source a name (optional -- defaults to the folder name)
 6. Tap **Save**
-
-<ScreenshotPlaceholder description="Add Local Folder source dialog" platform="iOS" />
 
 ### iOS: Files App Integration
 

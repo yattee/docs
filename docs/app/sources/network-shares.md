@@ -3,8 +3,6 @@ sidebar_position: 3
 title: "Network Shares (SMB & WebDAV)"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Network Shares (SMB & WebDAV)
 
 Network share sources connect Yattee to file servers on your local network, letting you stream video files from a NAS, desktop, or cloud storage service without copying anything to your device.
@@ -37,8 +35,6 @@ Yattee supports two network file access protocols:
    - **SSL settings** -- for HTTPS connections
    - **Allow invalid certificates** -- enable this if your server uses a self-signed SSL certificate
 5. Tap **Save**
-
-<ScreenshotPlaceholder description="Network share configuration form" platform="iOS" />
 
 ## Network Discovery
 

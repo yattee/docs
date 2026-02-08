@@ -3,8 +3,6 @@ sidebar_position: 4
 title: "Credentials & Security"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Credentials & Security
 
 Credentials allow Yattee Server to access content that requires authentication -- age-restricted videos, premium content, region-locked material, and password-protected streams. Currently, Yattee Server supports authentication via **cookie files** in Netscape format.
@@ -13,7 +11,7 @@ Credentials allow Yattee Server to access content that requires authentication -
 
 When Yattee Server extracts video information or streams content through yt-dlp, it passes any configured credentials for the relevant site as command-line flags. This allows yt-dlp to authenticate on your behalf without exposing credentials to clients.
 
-<ScreenshotPlaceholder description="Admin panel credentials section showing a site with configured cookie credentials" />
+![Add Site with Credentials](/img/screenshots/server/add-credentials.png)
 
 ## Cookie File Credential
 

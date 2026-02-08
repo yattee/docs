@@ -3,8 +3,6 @@ sidebar_position: 1
 title: "Docker Setup"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Docker Setup
 
 Yattee Server is a self-hosted video API server powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp). It extracts video streams, proxies playback, and optionally integrates with an Invidious instance to provide search, trending, channel browsing, captions, and thumbnails.

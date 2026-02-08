@@ -3,13 +3,9 @@ sidebar_position: 3
 title: "Setup Wizard"
 ---
 
-import ScreenshotPlaceholder from '@site/src/components/ScreenshotPlaceholder';
-
 # Setup Wizard
 
 When you start Yattee Server for the first time, the server automatically redirects all requests to the setup wizard at `/setup`. This wizard walks you through creating the initial admin account and optionally connecting an Invidious instance.
-
-<ScreenshotPlaceholder description="Setup wizard page showing admin account creation form with username, password, confirm password, and Invidious Proxy URL fields" />
 
 ## What the Wizard Configures
 
