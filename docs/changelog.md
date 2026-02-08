@@ -3,6 +3,10 @@ sidebar_position: 100
 title: "Changelog"
 ---
 
+import Lightbox from '@site/src/components/Lightbox';
+
+<Lightbox />
+
 # Changelog
 
 This page tracks notable changes to the Yattee ecosystem.
@@ -12,6 +16,13 @@ This page tracks notable changes to the Yattee ecosystem.
 ### 2.0.0 (250)
 
 Complete rewrite of Yattee with more robust MPV implementation, redesigned navigation, customizable player controls and gestures, iCloud data and settings sync, video downloads, and multi-source support.
+
+<div class="changelog-hero">
+  <a href="/img/screenshots/app/home-light.png" target="_blank"><img src="/img/screenshots/app/home-light.png" alt="Home screen (light mode)" /></a>
+  <a href="/img/screenshots/app/home-dark.png" target="_blank"><img src="/img/screenshots/app/home-dark.png" alt="Home screen (dark mode)" /></a>
+  <a href="/img/screenshots/app/video-info.png" target="_blank"><img src="/img/screenshots/app/video-info.png" alt="Video info screen" /></a>
+  <a href="/img/screenshots/app/player.png" target="_blank"><img src="/img/screenshots/app/player.png" alt="Player screen" /></a>
+</div>
 
 :::note iOS Beta Only
 Yattee 2.0 is currently available as an iOS beta only. macOS and tvOS builds are not yet available.
