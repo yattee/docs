@@ -56,10 +56,6 @@ From there, you can access the **admin panel** at `/admin` to configure sites, m
 Once setup is complete (i.e., at least one admin account exists), the setup wizard is no longer accessible. Navigating to `/setup` will redirect you to the main application.
 :::
 
-## Returning Users
-
-After the initial setup, returning users can log in at `/login` with the credentials created during setup or any additional accounts created through the admin panel.
-
 ## Alternative: Auto-Provisioning
 
 If you prefer to skip the interactive wizard -- for example, in automated deployments or CI/CD pipelines -- you can provision the admin account using environment variables:

@@ -122,8 +122,8 @@ You can install 2.0 on top of an existing 1.x installation, but all 1.x data (ac
 - Parallel extraction via yt-dlp with Yattee Server
 - Clipboard URL detection
 
-#### YouTube Enhancements
-- SponsorBlock (auto-skip/mute, category filtering, progress bar visualization)
+#### Community Enhancements
+- SponsorBlock (auto-skip, category filtering, progress bar visualization)
 - DeArrow (community titles/thumbnails, vote ranking)
 - Return YouTube Dislike
 

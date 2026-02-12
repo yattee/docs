@@ -122,7 +122,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright ${new Date().getFullYear()} Yattee. Built with Docusaurus.`,
+      copyright: `${new Date().getFullYear()} Yattee. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

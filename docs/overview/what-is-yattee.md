@@ -48,8 +48,8 @@ Yattee is a privacy-focused video streaming client for **iOS**, **macOS**, and *
 - **Per-channel notifications** -- for new uploads
 - **iCloud sync** -- across iOS, macOS and tvOS
 
-### YouTube Enhancements
-- **SponsorBlock** -- auto-skip/mute with progress bar visualization
+### Community Enhancements
+- **SponsorBlock** -- auto-skip with progress bar visualization
 - **DeArrow** -- community-sourced titles and thumbnails
 - **Return YouTube Dislike** -- restore dislike counts
 
