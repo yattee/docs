@@ -80,6 +80,11 @@ const sidebars: SidebarsConfig = {
       id: 'guides/public-instances',
       label: 'Public Instances for YouTube',
     },
+    {
+      type: 'doc',
+      id: 'guides/reporting-issues',
+      label: 'Reporting Issues',
+    },
   ],
 };
 
