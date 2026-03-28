@@ -91,6 +91,11 @@ const config: Config = {
           label: 'Guides',
         },
         {
+          to: '/docs/roadmap',
+          label: 'Roadmap',
+          position: 'left',
+        },
+        {
           to: '/docs/changelog',
           label: 'Changelog',
           position: 'left',
