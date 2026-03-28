@@ -13,6 +13,37 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
+### 2.0.0 (256)
+
+#### New Features
+- Show seek time preview when no storyboards are available
+- Add separate glass capsule for chapter title above seek preview
+
+#### Improvements
+- Deduplicate time formatting and clean up unused code
+- Update packages
+
+#### Bug Fixes
+- Fix 5 TestFlight crash types from builds 250-254
+- Fix HTTP basic auth credentials being stripped from instance URLs
+- Fix Home view showing zero counts after returning from background
+- Fix HomeView data staleness on new watch entries, tab switches, and settings dismissal
+- Fix missing leading padding on instance content section headers
+
+---
+
+### 2.0.0 (254)
+
+#### New Features
+- Add video proxy support for Invidious/Piped instances
+
+#### Bug Fixes
+- Fix CFNetwork SIGABRT crash when creating download tasks on invalidated session
+- Fix BGTaskScheduler crash by moving registration to App.init()
+- Fix Piped relatedStreams decoding crash on missing fields
+
+---
+
 ### 2.0.0 (253)
 
 #### New Features
