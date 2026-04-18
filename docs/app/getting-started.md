@@ -16,7 +16,7 @@ Yattee is available through three channels:
 - **Sideloading** -- build from source or install the IPA from [GitHub Releases](https://github.com/yattee/yattee/releases)
 
 :::note iOS Beta Only
-Yattee 2.0 is currently available as an iOS beta only. macOS and tvOS builds are not yet available.
+Yattee 2.0 is currently available as an iOS and tvOS beta only. macOS builds are not yet available.
 :::
 
 ### System Requirements

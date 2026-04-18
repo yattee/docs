@@ -13,6 +13,37 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
+### 2.0.0 (259)
+<div class="changelog-hero">
+  <a href="/img/screenshots/app/tvos-sidebar.png" target="_blank"><img src="/img/screenshots/app/tvos-sidebar.png" alt="tvOS sidebar navigation" /></a>
+  <a href="/img/screenshots/app/tvos-browse.png" target="_blank"><img src="/img/screenshots/app/tvos-browse.png" alt="tvOS browse view" /></a>
+  <a href="/img/screenshots/app/tvos-player.png" target="_blank"><img src="/img/screenshots/app/tvos-player.png" alt="tvOS player" /></a>
+  <a href="/img/screenshots/app/tvos-settings.png" target="_blank"><img src="/img/screenshots/app/tvos-settings.png" alt="tvOS settings" /></a>
+</div>
+
+**tvOS support** — Yattee 2 is now available on Apple TV via TestFlight, bringing many new features with a native interface built for the large-screen layout
+  - Redesigned player controls with a seek bar and storyboard support
+  - Sidebar navigation
+  - Two-column layouts for Video Info, Channel, Playlist detail, Subscriptions, and setting screens
+  - Top Shelf extension
+
+#### New Features
+- Add List/Grid layout option for Home sections
+- Add Playlists entry to sidebar main navigation
+- Add Continue Watching toggles to tab bar and sidebar settings
+- Replace onboarding flow with silent v1 import and iCloud alert
+
+#### Improvements
+- Store higher-quality YouTube thumbnail URLs in recent playlists
+- Refresh expired thumbnail URLs for downloads and video info
+- Show video title placeholder while thumbnails load
+- Respect video tap action settings in the media browser
+
+#### Bug Fixes
+- Fix storyboard downloads with Yattee Server direct YouTube URLs
+
+---
+
 ### 2.0.0 (256)
 
 #### New Features
@@ -85,8 +116,8 @@ Complete rewrite of Yattee with more robust MPV implementation, redesigned navig
   <a href="/img/screenshots/app/player.png" target="_blank"><img src="/img/screenshots/app/player.png" alt="Player screen" /></a>
 </div>
 
-:::note iOS Beta Only
-Yattee 2.0 is currently available as an iOS beta only. macOS and tvOS builds are not yet available.
+:::note Beta Availability
+Yattee 2.0 is available as an iOS and tvOS beta via TestFlight. A macOS build is not yet available.
 :::
 
 :::note Upgrading from 1.x
@@ -207,6 +238,20 @@ You can install 2.0 on top of an existing 1.x installation, but all 1.x data (ac
 Check the [GitHub releases](https://github.com/yattee/yattee/releases) for the latest updates.
 
 ## Yattee Server
+
+### 1.0.2
+
+#### New Features
+- **InnerTube as primary YouTube source** — Yattee Server now talks to YouTube's internal InnerTube API directly, reducing reliance on the Invidious proxy for most operations
+  - Video metadata, playlists, channel feeds, general search, recommended videos, comments, avatars, and storyboards all served from InnerTube first, with yt-dlp and Invidious as fallbacks
+  - Global InnerTube enabled/disabled toggle in settings
+
+#### Bug Fixes
+- Update default feed fetch interval from 30 minutes to 360 minutes
+- Fix comments: published timestamp and reply loading
+- Fix `isDefault` marking locale dubs as original audio tracks
+
+---
 
 ### 1.0.0
 

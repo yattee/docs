@@ -11,8 +11,8 @@ Yattee is developed mostly by a single person, so your patience is greatly appre
 
 ## Client App
 
-### tvOS & macOS Release
-Bringing Yattee 2 to Apple TV and macOS beyond the current iOS/iPadOS focus. This is in advanced progress.
+### macOS Release
+Bringing Yattee 2 to macOS beyond the current iOS/iPadOS and tvOS support. tvOS is now available via TestFlight; macOS work is in progress.
 
 ### Improved Accounts Management
 Allow using playlists, subscriptions, and other account data from multiple source types simultaneously, making it easier to aggregate content across different backends.
