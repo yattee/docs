@@ -22,6 +22,11 @@ const sidebars: SidebarsConfig = {
 
   serverSidebar: [
     {
+      type: 'doc',
+      id: 'server/what-is-yattee-server',
+      label: 'What is Yattee Server',
+    },
+    {
       type: 'category',
       label: 'Setup',
       collapsed: false,
