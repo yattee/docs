@@ -85,15 +85,20 @@ Each popular site entry also includes an example URL you can use to test extract
 
 ## Proxy Streaming
 
-The proxy streaming toggle controls how video stream URLs are delivered to clients:
+The **Proxy Streaming** flag is the per-site default that decides whether yattee-server returns direct CDN URLs to the client or routes streams through the server. When on, playback fetches return signed `/proxy/relay` URLs (byte-relay with HTTP Range support); when off, the client gets direct CDN URLs.
 
-| Mode | Behavior | Use When |
-|------|----------|----------|
-| **Disabled** (default for YouTube) | The server returns direct CDN URLs to the client. The client connects to the content provider directly to stream the video. | The site allows direct streaming from its CDN without IP restrictions or cookie requirements. This is the most bandwidth-efficient option for the server. |
-| **Enabled** | Video streams are downloaded by the server and relayed to the client. The client streams from your server, not from the original CDN. | The site blocks client IPs, requires cookies or authentication headers for streaming, or you want to keep client IP addresses private from content providers. |
+Use it when:
+
+- The site **IP-binds stream URLs** (most prominently YouTube/googlevideo) and your clients reach the server from a different network than the server uses for extraction.
+- The site requires **cookies or auth headers** the client doesn't have.
+- You want to keep **client IP addresses private** from content providers.
+
+Leave it off when all your clients are on the same network as the server and direct streams are reachable -- direct is the most bandwidth-efficient path.
+
+The flag is the operator-level default. The iOS/macOS client also has a per-source toggle that can override it. For the full picture (modes, the `/proxy/relay` vs `/proxy/fast/` split, how the client and server toggles interact, capacity tuning), see [Stream Proxying](./stream-proxying.md).
 
 :::info
-Proxy streaming increases server bandwidth and disk usage since all video data passes through your server. The temporary files are stored in the downloads volume and cleaned up based on the `proxy_download_max_age` setting. See [Server Settings](./settings.md#proxy-downloads) for details.
+When proxying is on, all video bytes traverse the server. See [Server Settings -> Proxy Downloads](./settings.md#proxy-downloads) for the related capacity caps.
 :::
 
 ## Testing a Site

@@ -45,6 +45,7 @@ const sidebars: SidebarsConfig = {
         'server/admin/users',
         'server/admin/sites',
         'server/admin/credentials',
+        'server/admin/stream-proxying',
       ],
     },
     {
