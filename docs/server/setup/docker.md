@@ -73,6 +73,7 @@ All configuration is done through environment variables. The following table lis
 | `DEBUG` | `false` | Enable auto-reload for development |
 | `SECURE_COOKIES` | `true` | Require HTTPS for session cookies. Set to `false` only for local development without TLS |
 | `YTDLP_SKIP_TLS_VERIFY` | `false` | Skip TLS certificate verification in yt-dlp requests |
+| `YT_EGRESS_PROXY` | *(empty)* | HTTP or SOCKS5 proxy for all YouTube-bound traffic (yt-dlp, the direct InnerTube client, and the Invidious fallback path). Format: `http://[user:pass@]host:port` or `socks5://host:port`. See [Egress Proxy](#egress-proxy) below. |
 | `SSRF_EXTRA_ALLOWED_CIDRS` | *(empty)* | Comma-separated CIDRs to permit through the SSRF guard, in addition to the built-in allow list. Use when a backing service (e.g. an Invidious companion) lives on your LAN and returns stream URLs that point at private IPs. Example: `10.20.30.0/24` or `10.20.30.0/24,fd00::/8`. Loopback is always blocked. See [SSRF Protection](../security.md#ssrf-protection). |
 
 :::tip Cleaner Configuration
@@ -118,6 +119,42 @@ When these variables are set, the server will automatically create the admin acc
 
 :::note
 Auto-provisioning only runs when no admin account exists yet. If the setup wizard has already been completed, these environment variables are ignored.
+:::
+
+## Egress Proxy
+
+Some YouTube requests (rate limiting, regional restrictions, bot challenges) succeed more reliably when routed through a different IP than your server's default outbound address. `YT_EGRESS_PROXY` configures a single upstream proxy for all YouTube-bound traffic:
+
+- **yt-dlp** — passed via `--proxy`, used for video extraction and downloads
+- **InnerTube client** — the direct YouTube API path used for video metadata, search, and channel queries
+- **Invidious fallback** — outbound calls when the server proxies its own request through the configured proxy
+
+The proxy is **not** used for requests to your configured Invidious instance itself, for the admin UI, or for client-facing API responses.
+
+```yaml
+services:
+  yattee-server:
+    image: yattee/yattee-server:latest
+    environment:
+      - YT_EGRESS_PROXY=http://user:pass@proxy.example.com:8888
+    # ...
+```
+
+Both HTTP and SOCKS5 are supported:
+
+```bash
+# HTTP proxy with basic auth
+YT_EGRESS_PROXY=http://user:pass@10.0.0.5:8888
+
+# Plain HTTP proxy
+YT_EGRESS_PROXY=http://10.0.0.5:8888
+
+# SOCKS5
+YT_EGRESS_PROXY=socks5://10.0.0.5:1080
+```
+
+:::tip Temporary disable without losing the value
+The admin settings panel exposes a separate **Enable egress proxy** toggle. Turning it off ignores the configured proxy without clearing the value, which is useful for A/B testing whether the proxy is helping or hurting on a given day.
 :::
 
 ## Building from Source
