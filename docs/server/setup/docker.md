@@ -73,6 +73,7 @@ All configuration is done through environment variables. The following table lis
 | `DEBUG` | `false` | Enable auto-reload for development |
 | `SECURE_COOKIES` | `true` | Require HTTPS for session cookies. Set to `false` only for local development without TLS |
 | `YTDLP_SKIP_TLS_VERIFY` | `false` | Skip TLS certificate verification in yt-dlp requests |
+| `SSRF_EXTRA_ALLOWED_CIDRS` | *(empty)* | Comma-separated CIDRs to permit through the SSRF guard, in addition to the built-in allow list. Use when a backing service (e.g. an Invidious companion) lives on your LAN and returns stream URLs that point at private IPs. Example: `10.20.30.0/24` or `10.20.30.0/24,fd00::/8`. Loopback is always blocked. See [SSRF Protection](../security.md#ssrf-protection). |
 
 :::tip Cleaner Configuration
 Instead of listing environment variables inline in `docker-compose.yml`, create a `.env` file in the same directory and reference it:

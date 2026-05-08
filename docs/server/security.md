@@ -76,6 +76,22 @@ All user-supplied URLs are validated through DNS resolution checks to prevent Se
 The CGNAT range `100.64.0.0/10` (used by Tailscale and other overlay networks) is **allowed** through the SSRF filter, so you can use Yattee Server within a Tailscale network without issues.
 :::
 
+### Allow-listing your LAN
+
+If you run a backing service on your local network -- for example an [Invidious companion](./admin/stream-proxying.md) at `10.20.30.100:3001` -- the SSRF guard will block the stream URLs it returns, since RFC 1918 ranges (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) are private by default.
+
+Set the `SSRF_EXTRA_ALLOWED_CIDRS` environment variable to a comma-separated list of CIDRs you want to permit:
+
+```bash
+SSRF_EXTRA_ALLOWED_CIDRS=10.20.30.0/24
+```
+
+Multiple ranges and IPv6 are supported (`10.20.30.0/24,fd00::/8`). Malformed entries are logged and dropped at startup. **Loopback is always blocked** regardless of this setting -- the loopback check runs before the allow list, so you cannot accidentally expose `127.0.0.0/8`.
+
+:::tip Keep the scope tight
+Allow-list only the specific subnet that hosts your backing service. Avoid broadening to the full `10.0.0.0/8` unless you trust every host in that range, since the SSRF guard is what prevents user-supplied URLs from probing your internal network.
+:::
+
 ## Security Headers
 
 Every HTTP response from Yattee Server includes the following security headers:
