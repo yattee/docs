@@ -42,8 +42,8 @@ See [Credentials & Security](../server/admin/credentials.md) for details on addi
 Install the Yattee app on your device:
 
 - **iOS / iPadOS** -- join the [TestFlight beta](https://yattee.stream/beta2)
-<!-- - **macOS** -- Download from the Mac App Store -->
-<!-- - **tvOS** -- Download from the tvOS App Store -->
+{/* - **macOS** -- Download from the Mac App Store */}
+{/* - **tvOS** -- Download from the tvOS App Store */}
 
 ## Step 5: Add Your Server as a Source
 

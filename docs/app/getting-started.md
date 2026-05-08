@@ -11,7 +11,7 @@ This guide walks you through installing Yattee and adding your first video sourc
 
 Yattee is available through three channels:
 
-<!-- - **App Store** -- stable releases for iOS, macOS, and tvOS -->
+{/* - **App Store** -- stable releases for iOS, macOS, and tvOS */}
 - **[TestFlight](https://yattee.stream/beta2)** -- beta builds with early access to new features
 - **Sideloading** -- build from source or install the IPA from [GitHub Releases](https://github.com/yattee/yattee/releases)
 
