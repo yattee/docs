@@ -72,7 +72,7 @@ All user-supplied URLs are validated through DNS resolution checks to prevent Se
 - **Dangerous hostnames**: `localhost`, `metadata.google.internal`, `169.254.169.254` (cloud metadata services)
 - **Dangerous suffixes**: `.internal`, `.local`, `.localhost`
 
-:::info Tailscale and CGNAT compatibility
+:::info[Tailscale and CGNAT compatibility]
 The CGNAT range `100.64.0.0/10` (used by Tailscale and other overlay networks) is **allowed** through the SSRF filter, so you can use Yattee Server within a Tailscale network without issues.
 :::
 
@@ -88,7 +88,7 @@ SSRF_EXTRA_ALLOWED_CIDRS=10.20.30.0/24
 
 Multiple ranges and IPv6 are supported (`10.20.30.0/24,fd00::/8`). Malformed entries are logged and dropped at startup. **Loopback is always blocked** regardless of this setting -- the loopback check runs before the allow list, so you cannot accidentally expose `127.0.0.0/8`.
 
-:::tip Keep the scope tight
+:::tip[Keep the scope tight]
 Allow-list only the specific subnet that hosts your backing service. Avoid broadening to the full `10.0.0.0/8` unless you trust every host in that range, since the SSRF guard is what prevents user-supplied URLs from probing your internal network.
 :::
 
@@ -165,7 +165,7 @@ All persistent data is stored in the `DATA_DIR` directory:
 - **`.encryption_key`** -- Fernet encryption key for credentials
 - **`.stream_token_secret`** -- HMAC signing key for stream tokens
 
-:::danger Back up your DATA_DIR
+:::danger[Back up your DATA_DIR]
 The encryption key and stream token secret are critical. If lost, encrypted credentials become unrecoverable and all active stream tokens are invalidated. Include the entire `DATA_DIR` in your regular backup routine.
 :::
 

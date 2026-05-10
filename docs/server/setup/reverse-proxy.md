@@ -22,7 +22,7 @@ When placing Yattee Server behind an HTTPS reverse proxy, keep the following set
 - **`CORS_ORIGINS`** -- If the Yattee client connects from a different origin than the server, set this to the client's origin (e.g., `CORS_ORIGINS=https://your-domain.com`). Multiple origins can be specified as a comma-separated list.
 - **Proxy buffering** -- Disable proxy buffering so that video streams are forwarded to the client immediately rather than being buffered in memory on the proxy.
 
-:::warning Video Streaming
+:::warning[Video Streaming]
 Disabling proxy buffering is important for video playback. Without it, the reverse proxy may attempt to buffer the entire video response before forwarding it to the client, which causes playback delays and excessive memory usage.
 :::
 

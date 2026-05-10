@@ -61,7 +61,7 @@ Yattee uses iCloud to sync source configurations across your Apple devices, with
 - **Network shares and remote servers** -- configurations sync across all devices signed into the same iCloud account. A NAS connection you set up on your iPhone will automatically appear on your Mac and Apple TV.
 - **Local folders** -- these are device-specific and do not sync, because they reference directories that exist only on that particular device.
 
-:::note tvOS and credentials
+:::note[tvOS and credentials]
 tvOS does not sync credentials from iCloud Keychain. Source configurations will still appear on your Apple TV, but passwords and usernames will be blank. When a synced source appears on tvOS, Yattee will prompt you to enter the credentials directly on the Apple TV.
 :::
 

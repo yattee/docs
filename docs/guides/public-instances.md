@@ -31,7 +31,7 @@ The most reliable way to access YouTube content through Yattee is to run your ow
 
 Yattee Server uses yt-dlp under the hood and can be set up in minutes using Docker.
 
-:::tip Getting started
+:::tip[Getting started]
 Follow the [Complete Setup from Scratch](./complete-setup.md) guide to deploy your own Yattee Server and connect it to the app.
 :::
 

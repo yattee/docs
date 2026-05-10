@@ -83,7 +83,7 @@ If you are frequently hitting rate limits during development, you can adjust the
 
 **Cause:** The file `{DATA_DIR}/.encryption_key` was deleted, corrupted, or the `DATA_DIR` was recreated without restoring the key.
 
-:::danger This is unrecoverable
+:::danger[This is unrecoverable]
 If the encryption key is lost, **all encrypted credentials are permanently unrecoverable**. There is no way to decrypt them without the original key.
 :::
 
@@ -253,6 +253,6 @@ When something is not working, run through these steps in order:
    ```
    Verify all configuration values are set correctly.
 
-:::info Still stuck?
+:::info[Still stuck?]
 If you have worked through this checklist and the issue persists, gather the server logs, the output of `/info`, and a description of the problem, then open an issue on the Yattee Server repository.
 :::

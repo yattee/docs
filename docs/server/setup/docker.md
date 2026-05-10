@@ -52,7 +52,7 @@ Yattee Server uses two persistent volumes:
 | `downloads` | `/downloads` | Temporary storage for proxied video files during streaming |
 | `data` | `/app/data` | SQLite database (`yattee.db`) and encryption key (`.encryption_key`) |
 
-:::warning Data Persistence
+:::warning[Data Persistence]
 The `data` volume is critical. It contains your SQLite database and the encryption key used to protect stored credentials. If you lose this volume, you will need to re-run the setup wizard and re-enter all credentials. **Back up this volume regularly.**
 :::
 
@@ -76,7 +76,7 @@ All configuration is done through environment variables. The following table lis
 | `YT_EGRESS_PROXY` | *(empty)* | HTTP or SOCKS5 proxy for all YouTube-bound traffic (yt-dlp, the direct InnerTube client, and the Invidious fallback path). Format: `http://[user:pass@]host:port` or `socks5://host:port`. See [Egress Proxy](#egress-proxy) below. |
 | `SSRF_EXTRA_ALLOWED_CIDRS` | *(empty)* | Comma-separated CIDRs to permit through the SSRF guard, in addition to the built-in allow list. Use when a backing service (e.g. an Invidious companion) lives on your LAN and returns stream URLs that point at private IPs. Example: `10.20.30.0/24` or `10.20.30.0/24,fd00::/8`. Loopback is always blocked. See [SSRF Protection](../security.md#ssrf-protection). |
 
-:::tip Cleaner Configuration
+:::tip[Cleaner Configuration]
 Instead of listing environment variables inline in `docker-compose.yml`, create a `.env` file in the same directory and reference it:
 
 ```yaml
@@ -153,7 +153,7 @@ YT_EGRESS_PROXY=http://10.0.0.5:8888
 YT_EGRESS_PROXY=socks5://10.0.0.5:1080
 ```
 
-:::tip Temporary disable without losing the value
+:::tip[Temporary disable without losing the value]
 The admin settings panel exposes a separate **Enable egress proxy** toggle. Turning it off ignores the configured proxy without clearing the value, which is useful for A/B testing whether the proxy is helping or hurting on a given day.
 :::
 

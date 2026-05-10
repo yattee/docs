@@ -39,7 +39,7 @@ Yattee Server caches various data to reduce redundant yt-dlp and Invidious calls
 | `cache_avatar_ttl` | `86400` (24 hours) | 3600--604800 | How long avatar images are cached. Avatars change rarely, so a long TTL is appropriate. |
 | `cache_extract_ttl` | `900` (15 min) | 60--7200 | How long extracted stream URLs are cached. Keep this short since CDN URLs often expire. |
 
-:::info Tuning cache TTLs
+:::info[Tuning cache TTLs]
 Lower TTL values mean fresher data but more frequent yt-dlp and Invidious requests. If your server has limited bandwidth or you are hitting rate limits on upstream services, consider increasing these values. Conversely, if you need real-time accuracy (e.g., for live stream URLs), lower `cache_extract_ttl`.
 :::
 

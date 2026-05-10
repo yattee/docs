@@ -17,7 +17,7 @@ When Yattee Server extracts video information or streams content through yt-dlp,
 
 The `cookies_file` credential type maps to the yt-dlp `--cookies` flag. It accepts cookie file contents in **Netscape format**, which is the standard format used by browser cookie-export extensions.
 
-:::tip Recommended for YouTube
+:::tip[Recommended for YouTube]
 The most reliable method for YouTube authentication is exporting cookies from your browser using an extension like "Get cookies.txt LOCALLY", then pasting the contents into the credential value field.
 :::
 
@@ -55,7 +55,7 @@ The key file is created with restricted permissions (`0600` -- owner read/write 
 
 You can also provide your own encryption key via the `CREDENTIALS_ENCRYPTION_KEY` environment variable. If set, this takes precedence over the file.
 
-:::danger Encryption key loss is unrecoverable
+:::danger[Encryption key loss is unrecoverable]
 If the `.encryption_key` file is deleted or corrupted and you have not backed it up or set `CREDENTIALS_ENCRYPTION_KEY`, **all encrypted credentials become permanently unrecoverable**. You will need to re-enter every credential.
 
 Always include the `DATA_DIR` directory in your backup strategy.

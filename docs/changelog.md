@@ -189,11 +189,11 @@ Complete rewrite of Yattee with more robust MPV implementation, redesigned navig
   <a href="/img/screenshots/app/player.png" target="_blank"><img src="/img/screenshots/app/player.png" alt="Player screen" /></a>
 </div>
 
-:::note Beta Availability
+:::note[Beta Availability]
 Yattee 2.0 is available as an iOS and tvOS beta via TestFlight. A macOS build is not yet available.
 :::
 
-:::note Upgrading from 1.x
+:::note[Upgrading from 1.x]
 You can install 2.0 on top of an existing 1.x installation, but all 1.x data (accounts, history, searches) will be lost. Only your configured instances can be reimported on the onboarding screen.
 :::
 
