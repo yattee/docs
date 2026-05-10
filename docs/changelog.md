@@ -312,6 +312,24 @@ Check the [GitHub releases](https://github.com/yattee/yattee/releases) for the l
 
 ## Yattee Server
 
+### 1.0.3
+
+#### New Features
+- Add `/proxy/relay` byte-relay endpoint for playback streams
+- Add toggle to proxy Invidious stream URLs via companion (`local=true`)
+- Add YT egress proxy runtime-configurable via the admin panel, with an enable/disable toggle that preserves the value
+- Add `SSRF_EXTRA_ALLOWED_CIDRS` env var for allow-listing additional LAN ranges
+- Prefer Invidious for video lookups and expose `extractionMethod` in responses
+- Mark original audio track via xtags in `displayName`
+
+#### Improvements
+- Skip Invidious for live YouTube broadcasts; use yt-dlp instead
+- Route Invidious local streams (including `adaptiveFormats`) through `/companion/videoplayback`
+- Resolve relative Invidious stream URLs against the instance base URL
+- Synthesize audio track metadata from xtags when Invidious omits it
+
+---
+
 ### 1.0.2
 
 #### New Features
@@ -323,6 +341,13 @@ Check the [GitHub releases](https://github.com/yattee/yattee/releases) for the l
 - Update default feed fetch interval from 30 minutes to 360 minutes
 - Fix comments: published timestamp and reply loading
 - Fix `isDefault` marking locale dubs as original audio tracks
+
+---
+
+### 1.0.1
+
+#### Improvements
+- Update yt-dlp to 2026.03.17
 
 ---
 
