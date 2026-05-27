@@ -312,6 +312,21 @@ Check the [GitHub releases](https://github.com/yattee/yattee/releases) for the l
 
 ## Yattee Server
 
+### 1.0.5
+
+#### Bug Fixes
+- Parse channel videos from InnerTube lockups
+
+---
+
+### 1.0.4
+
+#### Bug Fixes
+- Fix fetching channels via InnerTube
+- Fix handling errors when fetching channels from Invidious
+
+---
+
 ### 1.0.3
 
 #### New Features
