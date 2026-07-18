@@ -360,6 +360,27 @@ Check the [GitHub releases](https://github.com/yattee/yattee/releases) for the l
 
 ## Yattee Server
 
+### 1.0.7
+
+#### Improvements
+- Update yt-dlp to 2026.07.04
+
+---
+
+### 1.0.6
+
+#### New Features
+- Detect YouTube Shorts via InnerTube signals
+
+#### Bug Fixes
+- Fix playlist pagination stopping at 100 videos
+- Fix InnerTube playlist extraction for new lockupViewModel shape
+
+#### Improvements
+- Update yt-dlp to 2026.06.09
+
+---
+
 ### 1.0.5
 
 #### Bug Fixes
