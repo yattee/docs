@@ -13,6 +13,54 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
+### 2.0.0 (264)
+<div class="changelog-hero">
+  <a href="/img/screenshots/app/macos-home.jpg" target="_blank"><img src="/img/screenshots/app/macos-home.jpg" alt="macOS Home view (light mode)" /></a>
+  <a href="/img/screenshots/app/macos-home-dark.jpg" target="_blank"><img src="/img/screenshots/app/macos-home-dark.jpg" alt="macOS Home view (dark mode)" /></a>
+  <a href="/img/screenshots/app/macos-player.jpg" target="_blank"><img src="/img/screenshots/app/macos-player.jpg" alt="macOS player window" /></a>
+  <a href="/img/screenshots/app/macos-settings.jpg" target="_blank"><img src="/img/screenshots/app/macos-settings.jpg" alt="macOS appearance settings" /></a>
+</div>
+
+**macOS support** — Yattee 2 arrives on the Mac with its first public beta. It brings the full Yattee 2 experience to the desktop with a native interface: a dedicated player window with fullscreen and stay on top option, Picture in Picture, customizable and movable player controls, keyboard shortcuts, and other features present in the iOS app.
+
+The macOS app is available via [TestFlight](https://yattee.stream/beta2), or as a notarized direct download from [GitHub Releases](https://github.com/yattee/yattee/releases) that keeps itself up to date with built-in automatic updates.
+
+#### General
+
+##### New Features
+- Add **audio-only music mode**, available in video player settings and player controls button
+- Add **custom accent color** setting with system color picker and **separate light and dark mode colors**
+- **Redesign Home shortcut cards** with layout, color, and palette options and a live style preview
+- Add Edit Shortcuts and Hide options to Home shortcut context menus
+- Add pause, resume, and cancel context menu to download rows
+- Add manual legacy account import and allow importing account-less legacy instances as sources
+
+##### Improvements
+- Rework iCloud sync engine for more reliable syncing; resume sync from saved state instead of re-fetching everything
+- Sync watch progress when a video plays to the end and when the app goes to the background
+- Fall back to lower-quality thumbnails when higher-resolution variants are unavailable
+- Apply the selected theme at the window level so it takes effect everywhere
+
+##### Bug Fixes
+- Fix disabling Background Playback having no effect
+- Fix downloads never finishing and a crash on download completion
+- Fix missing storyboards when advancing to the next queued video
+- Fix live videos shown in the mini player bar
+- Fix crash when opening the share sheet on iPad
+- Fix rare data loss when the app is suspended in the background
+- Fix iCloud sync conflicts for recent channels, playlists, and watch progress
+- Fix Sources home shortcut counting disabled instances
+
+#### iOS
+- Use toolbar search placement on iPad channel view
+
+#### tvOS
+- Add A/V sync diagnostics settings page
+- Default Channels grid to 5 columns
+- Fixes for some reported playback issues
+
+---
+
 ### 2.0.0 (261)
 
 #### General
@@ -182,7 +230,7 @@ This page tracks notable changes to the Yattee ecosystem.
 
 Complete rewrite of Yattee with more robust MPV implementation, redesigned navigation, customizable player controls and gestures, iCloud data and settings sync, video downloads, and multi-source support.
 
-<div class="changelog-hero">
+<div class="changelog-hero changelog-hero-portrait">
   <a href="/img/screenshots/app/home-light.png" target="_blank"><img src="/img/screenshots/app/home-light.png" alt="Home screen (light mode)" /></a>
   <a href="/img/screenshots/app/home-dark.png" target="_blank"><img src="/img/screenshots/app/home-dark.png" alt="Home screen (dark mode)" /></a>
   <a href="/img/screenshots/app/video-info.png" target="_blank"><img src="/img/screenshots/app/video-info.png" alt="Video info screen" /></a>
@@ -190,7 +238,7 @@ Complete rewrite of Yattee with more robust MPV implementation, redesigned navig
 </div>
 
 :::note[Beta Availability]
-Yattee 2.0 is available as an iOS and tvOS beta via TestFlight. A macOS build is not yet available.
+Yattee 2.0 is available as a beta on iOS, iPadOS, tvOS, and macOS via [TestFlight](https://yattee.stream/beta2), with macOS also available as a direct download from [GitHub Releases](https://github.com/yattee/yattee/releases).
 :::
 
 :::note[Upgrading from 1.x]

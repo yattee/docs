@@ -11,17 +11,11 @@ Yattee is developed mostly by a single person, so your patience is greatly appre
 
 ## Client App
 
-### macOS Release
-Bringing Yattee 2 to macOS beyond the current iOS/iPadOS and tvOS support. tvOS is now available via TestFlight; macOS work is in progress.
-
 ### Improved Accounts Management
 Allow using playlists, subscriptions, and other account data from multiple source types simultaneously, making it easier to aggregate content across different backends.
 
 ### Video Player Customization
 More layout options and customization for the player screen, including sidebar layout, configurable video info display, and customizable context menu actions to better suit different viewing preferences and workflows.
-
-### Audio-Only Mode
-Option to disable video playback for audio-only listening.
 
 ### Queue Management
 More options for managing how the videos are managed in the queue.

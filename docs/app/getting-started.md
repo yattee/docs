@@ -12,11 +12,12 @@ This guide walks you through installing Yattee and adding your first video sourc
 Yattee is available through three channels:
 
 {/* - **App Store** -- stable releases for iOS, macOS, and tvOS */}
-- **[TestFlight](https://yattee.stream/beta2)** -- beta builds with early access to new features
+- **[TestFlight](https://yattee.stream/beta2)** -- beta builds for iOS, iPadOS, tvOS, and macOS with early access to new features
+- **Direct download (macOS)** -- notarized beta builds from [GitHub Releases](https://github.com/yattee/yattee/releases) with built-in automatic updates, as an alternative to TestFlight
 - **Sideloading** -- build from source or install the IPA from [GitHub Releases](https://github.com/yattee/yattee/releases)
 
-:::note[iOS/tvOS Beta Only]
-Yattee 2.0 is currently available as an iOS and tvOS beta only. macOS builds are not yet available.
+:::note[Beta Availability]
+Yattee 2.0 is currently in beta on all platforms: iOS, iPadOS, tvOS, and macOS via TestFlight, with macOS also available as a direct download.
 :::
 
 ### System Requirements
