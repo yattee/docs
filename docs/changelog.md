@@ -13,6 +13,58 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
+### 2.0.0 (269)
+
+#### New Features
+- Add embedded audio/subtitle track selection for multi-track files
+- Add loading external subtitle files for media-source playback
+- Add view options and search to playlists list view
+- Show and label WebDAV/SMB video streams in the quality selector
+
+#### Bug Fixes
+- Fix timed links resuming at watch position instead of URL timestamp
+- Fix autoplay countdown showing in repeat one queue mode
+- Fix double-tap fullscreen gesture rotating on portrait videos
+- Fix sending extracted videos (Twitch streams) to other devices
+- Fix missing thumbnails for videos saved to library
+- Make subtitle appearance settings adjustable on tvOS
+- Scope subscription counts and import/export to the active account
+- Switch MPVKit to Yattee fork with AV1 VideoToolbox session recovery
+- Fix startup crash in sideloaded builds without iCloud entitlements
+- Allow screen sleep during audio-only playback
+- Apply thumbnail fallback everywhere a single URL was rendered
+- Stop tracking resume progress for live streams
+- Label local-file video quality from mpv track info instead of Unknown
+- Keep macOS player fullscreen when queue advances to different-aspect video
+- Fix Picture in Picture geometry glitches from invalid window rects
+
+---
+
+### 2.0.0 (268)
+
+#### New Features
+- Show missing-credentials indicator for remote server sources
+
+#### Bug Fixes
+- Fix black video, freezes, autoplay and clock on Apple TV HD (A8)
+- Fix crash in OpenGL layer initialization on macOS 27 beta
+- Fix transparent background of iCloud sync overlay on tvOS
+- Fix some reported crashes
+
+---
+
+### 2.0.0 (266)
+
+#### Improvements
+- Make Enable Logging the master switch over all verbose logging
+
+#### Bug Fixes
+- Fix macOS legacy import sheet missing grouped form style
+- Fix tvOS legacy import rows acting as a single Remove button
+- Fix periodic tvOS playback stutter from render stalls
+
+---
+
 ### 2.0.0 (264)
 <div class="changelog-hero">
   <a href="/img/screenshots/app/macos-home.jpg" target="_blank"><img src="/img/screenshots/app/macos-home.jpg" alt="macOS Home view (light mode)" /></a>
