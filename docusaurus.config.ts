@@ -21,6 +21,8 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
+  clientModules: ['./src/clientModules/normalizeHtmlUrls.ts'],
+
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
