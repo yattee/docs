@@ -18,6 +18,11 @@ const sidebars: SidebarsConfig = {
         'app/sources/remote-servers',
       ],
     },
+    {
+      type: 'doc',
+      id: 'app/automation',
+      label: 'Automation',
+    },
   ],
 
   serverSidebar: [
