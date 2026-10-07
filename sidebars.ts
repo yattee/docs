@@ -19,9 +19,15 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
-      type: 'doc',
-      id: 'app/automation',
+      type: 'category',
       label: 'Automation',
+      collapsed: false,
+      link: {type: 'doc', id: 'app/automation/index'},
+      items: [
+        'app/automation/url-scheme',
+        'app/automation/x-callback-url',
+        'app/automation/shortcuts',
+      ],
     },
   ],
 
