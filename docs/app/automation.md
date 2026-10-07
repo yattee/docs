@@ -59,6 +59,8 @@ Actions do something instead of opening a screen. `{link}` is any link Yattee ca
 
 Any website or app can open a `yattee://` link, so actions that change your data — queueing, bookmarking, downloading, subscribing — ask first. If you only use them from your own automations, turn on **Settings → Navigation → Run Link Actions Without Asking**. Playing and player controls never ask.
 
+On Apple TV, tvOS itself also asks "Open in Yattee?" when another app sends a link while it is in front. That prompt comes from the system and can't be turned off.
+
 ## x-callback-url
 
 Every action also works as [x-callback-url](https://x-callback-url.com), so the calling app learns how it went:
@@ -68,6 +70,8 @@ yattee://x-callback-url/{action}?{parameters}&x-success={url}&x-error={url}&x-ca
 ```
 
 `{action}` is any action above: `play`, `queue`, `player/pause`, `player/state` and so on.
+
+x-callback-url works on iPhone, iPad and Mac. Apple TV runs the action but can't open the callbacks.
 
 - **x-success** is opened when the action finishes, with these added to its query where they apply: `videoID`, `title`, `channel`, `channelID`, and for player actions `playing`, `position`, `duration` and `rate`.
 - **x-error** is opened with `errorCode` and `errorMessage` when it fails — for example `noSource`, `nothingPlaying`, `queueDisabled` or `unsupportedAction`.
@@ -85,11 +89,11 @@ The Shortcuts app lists Yattee's actions under **Yattee**: Play Video, Add Video
 
 You can also ask Siri:
 
-- "Pause in Yattee", "Resume in Yattee", "Next Video in Yattee"
+- "Pause Yattee", "Resume Yattee", "Skip in Yattee", "Previous Video in Yattee", "Close Player in Yattee"
 - "What's playing in Yattee"
-- "Open Subscriptions in Yattee"
+- "Open Subscriptions in Yattee", "Show my Watch History in Yattee"
 - "Search Yattee"
 
 ## Home automation
 
-Tools that can open a URL on an Apple TV — for example `launch_app` in [pyatv](https://pyatv.dev) or Home Assistant's Apple TV integration, which uses it — can run any link above, such as `yattee://player/pause` or `yattee://play?url={link}`. x-callback-url isn't available on Apple TV.
+Tools that can open a URL on an Apple TV — for example `launch_app` in [pyatv](https://pyatv.dev) or Home Assistant's Apple TV integration, which uses it — can run any link above, such as `yattee://player/pause` or `yattee://play?url={link}`.
