@@ -112,6 +112,32 @@ If feed updates are slow, make sure `feed_ytdlp_use_flat_playlist` is enabled. T
 Enabling `allow_all_sites_for_extraction` means any authenticated user can request the server to extract content from any of the 1000+ sites yt-dlp supports. Only enable this if you trust all users on your server and understand the resource implications.
 :::
 
+## InnerTube
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `innertube_enabled` | `true` | Use YouTube's InnerTube API directly for comments, search suggestions, channel data and the feed, without Invidious. |
+
+## Network
+
+Settings for YouTube-bound traffic. Each one can also be set at startup with an environment variable (see [Docker Setup](../setup/docker.md#environment-variables)); values changed here override it.
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `yt_egress_proxy_enabled` | `true` | **Enable YouTube Egress Proxy**. Turn off to ignore the configured proxy without clearing it. |
+| `yt_egress_proxy` | *(empty)* | **YouTube Egress Proxy URL**, `http://[user:pass@]host:port` or `socks5://host:port`. Env: `YT_EGRESS_PROXY`. See [Egress Proxy](../setup/docker.md#egress-proxy). |
+| `yt_ip_family` | `auto` | **YouTube IP Family**: `auto`, `ipv4` or `ipv6`. Forces the IP family for yt-dlp, InnerTube and `/proxy/relay` YouTube traffic, so stream URLs are extracted and fetched from the same address family. Env: `YT_IP_FAMILY`. |
+| `yt_pot_enabled` | `false` | **Enable PO Token Provider (bgutil)**. Lets yt-dlp fetch YouTube PO tokens, which unblocks full formats on age-restricted videos. Env: `YT_POT_ENABLED`. |
+| `yt_pot_provider_url` | *(empty)* | **PO Token Provider URL** of an external [bgutil provider](https://github.com/Brainicism/bgutil-ytdlp-pot-provider), e.g. `http://host:4416`. Leave empty to use the provider bundled in the Docker image. Env: `YT_POT_PROVIDER_URL`. |
+
+:::tip[When to force an IP family]
+Use `ipv6` when your server's IPv4 address is bot-flagged by YouTube, or `ipv4` when IPv6 is unreliable. Forcing a family your host doesn't have breaks playback. While the egress proxy is enabled, this setting is ignored and the proxy's own address is used.
+:::
+
+:::info[PO token provider]
+The Docker image includes the bgutil provider, and the server starts and supervises it when `yt_pot_enabled` is on and no URL is set. If you run the server outside Docker, or built the image with `POT_PROVIDER=none`, run the provider yourself and set `yt_pot_provider_url`; otherwise PO tokens stay disabled.
+:::
+
 ## Security
 
 | Setting | Default | Range | Description |

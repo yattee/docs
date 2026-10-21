@@ -37,6 +37,28 @@ The most reliable method for YouTube authentication is exporting cookies from yo
 
 Each site in the admin panel has a **Test** button that attempts to extract a video URL using the configured credentials. This is the quickest way to verify that your credentials are working correctly. If the test fails, check the server logs for detailed error messages from yt-dlp.
 
+## Cookie Health
+
+YouTube rotates account cookies over time. A rotated cookie jar doesn't fail loudly: YouTube treats it as logged out and extraction quietly drops to 360p-only formats. Yattee Server watches for this and marks such cookies as **stale**.
+
+The server checks YouTube cookies:
+
+- when they are uploaded, at startup, and then every hour, by asking youtube.com whether the jar is still signed in
+- when yt-dlp reports that the account cookies are no longer valid
+- when an extraction with cookies fails but an anonymous retry succeeds (three times within 10 minutes)
+
+Stale cookies are skipped, so the server falls back to anonymous access instead of serving degraded results. If a later check finds the session signed in again, the cookies are used again automatically.
+
+In the admin panel:
+
+- The **Sites** list shows a **Cookies expired** badge on sites with stale cookies.
+- Each credential shows **Stale since** with the date it was marked, or **Validated** with the last successful check. Hover it to see the last error.
+- The **Validate** button on a site re-checks its cookies right away. It is shown only for sites the check supports (currently YouTube).
+
+:::tip[Fixing expired cookies]
+Export a fresh cookie file from your browser (see [YouTube with Cookies](#youtube-with-cookies)) and replace the stale credential. To make cookies last longer, export them from a private browser window that you close right after exporting, so the browser doesn't rotate them.
+:::
+
 ## Encryption
 
 Sensitive credential values are automatically encrypted at rest using **Fernet symmetric encryption** (AES-128-CBC with HMAC-SHA256 authentication).

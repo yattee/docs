@@ -74,6 +74,9 @@ All configuration is done through environment variables. The following table lis
 | `SECURE_COOKIES` | `true` | Require HTTPS for session cookies. Set to `false` only for local development without TLS |
 | `YTDLP_SKIP_TLS_VERIFY` | `false` | Skip TLS certificate verification in yt-dlp requests |
 | `YT_EGRESS_PROXY` | *(empty)* | HTTP or SOCKS5 proxy for all YouTube-bound traffic (yt-dlp, the direct InnerTube client, and the Invidious fallback path). Format: `http://[user:pass@]host:port` or `socks5://host:port`. See [Egress Proxy](#egress-proxy) below. |
+| `YT_IP_FAMILY` | `auto` | Force the IP family for YouTube-bound traffic: `auto`, `ipv4` or `ipv6`. Ignored while the egress proxy is active. See [Network settings](../admin/settings.md#network). |
+| `YT_POT_ENABLED` | `false` | Enable the bgutil PO token provider for yt-dlp, which unblocks full formats on age-restricted videos. See [PO Token Provider](#po-token-provider) below. |
+| `YT_POT_PROVIDER_URL` | *(empty)* | Base URL of an external bgutil PO token provider, e.g. `http://host:4416`. Leave unset to use the provider bundled in the image. |
 | `SSRF_EXTRA_ALLOWED_CIDRS` | *(empty)* | Comma-separated CIDRs to permit through the SSRF guard, in addition to the built-in allow list. Use when a backing service (e.g. an Invidious companion) lives on your LAN and returns stream URLs that point at private IPs. Example: `10.20.30.0/24` or `10.20.30.0/24,fd00::/8`. Loopback is always blocked. See [SSRF Protection](../security.md#ssrf-protection). |
 
 :::tip[Cleaner Configuration]
@@ -154,8 +157,27 @@ YT_EGRESS_PROXY=socks5://10.0.0.5:1080
 ```
 
 :::tip[Temporary disable without losing the value]
-The admin settings panel exposes a separate **Enable egress proxy** toggle. Turning it off ignores the configured proxy without clearing the value, which is useful for A/B testing whether the proxy is helping or hurting on a given day.
+The admin settings panel exposes a separate **Enable YouTube Egress Proxy** toggle. Turning it off ignores the configured proxy without clearing the value, which is useful for A/B testing whether the proxy is helping or hurting on a given day.
 :::
+
+:::note[IP family]
+`YT_IP_FAMILY` forces IPv4 or IPv6 for YouTube traffic when you are not using a proxy. While the egress proxy is active, the family reverts to `auto` and the proxy's own outbound address is used.
+:::
+
+## PO Token Provider
+
+Some YouTube videos, most notably age-restricted ones, only return their full set of formats when yt-dlp sends a PO token. The Docker image bundles the [bgutil PO token provider](https://github.com/Brainicism/bgutil-ytdlp-pot-provider), which the server starts and supervises itself. It is off by default:
+
+```yaml
+services:
+  yattee-server:
+    image: yattee/yattee-server:latest
+    environment:
+      - YT_POT_ENABLED=true
+    # ...
+```
+
+To use a provider you run yourself instead, also set `YT_POT_PROVIDER_URL=http://host:4416`. Both values can be changed later in the admin panel under [Settings > Network](../admin/settings.md#network).
 
 ## Building from Source
 
@@ -168,6 +190,14 @@ docker compose up --build -d
 ```
 
 This is useful for development or if you want to run the latest unreleased changes.
+
+To build a smaller image without the bundled PO token provider, pass the `POT_PROVIDER=none` build argument:
+
+```bash
+docker build --build-arg POT_PROVIDER=none -t yattee-server .
+```
+
+With that image, set `YT_POT_PROVIDER_URL` to an external provider if you need PO tokens.
 
 ## Updating
 

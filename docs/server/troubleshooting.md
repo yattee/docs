@@ -128,6 +128,8 @@ If the encryption key is lost, **all encrypted credentials are permanently unrec
 
 3. **Missing credentials:** Some content requires authentication (age-restricted, premium, region-locked). Check if the site has valid credentials configured. See [Credentials & Security](./admin/credentials.md) for setup instructions.
 
+   For age-restricted YouTube videos that play only in low quality, also enable the [PO token provider](./admin/settings.md#network).
+
 4. **Site-specific outage:** The upstream site itself may be experiencing issues. Check if the same video works in a browser.
 
 ---
@@ -164,7 +166,20 @@ Never use `CORS_ALLOW_ALL=true` in production. It disables credential support an
 
 ---
 
-### 10. HTTPS/SSL Issues Behind Reverse Proxy
+### 10. YouTube Videos Only Play in 360p
+
+**Symptom:** YouTube videos that used to offer HD formats now only offer 360p, or the Sites page shows **Cookies expired**.
+
+**Cause:** The YouTube account cookies were rotated by the browser and YouTube now treats them as logged out. The server marks such cookies stale and falls back to anonymous access.
+
+**Fix:**
+1. Click **Validate** on the YouTube site to re-check the cookies.
+2. If they are stale, export a fresh cookie file and replace the credential. See [Cookie Health](./admin/credentials.md#cookie-health).
+3. If anonymous access is also limited, your server's IP may be bot-flagged. Try forcing a different [YouTube IP Family](./admin/settings.md#network) or using an [egress proxy](./setup/docker.md#egress-proxy).
+
+---
+
+### 11. HTTPS/SSL Issues Behind Reverse Proxy
 
 **Symptom:** Redirect loops, mixed content warnings, or cookies not being sent.
 

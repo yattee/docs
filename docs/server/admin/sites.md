@@ -113,6 +113,10 @@ After configuring a site (and optionally adding credentials for it), use the **T
 Testing uses an actual yt-dlp extraction, so it may take a few seconds depending on the site and your server's connection speed.
 :::
 
+:::tip[Test vs. Validate]
+**Test** runs a full extraction for the site. Sites with YouTube cookies also have a **Validate** button, which only checks whether the cookies are still signed in. See [Cookie Health](./credentials.md#cookie-health).
+:::
+
 ## Extraction Scope
 
 By default, only URLs matching a **configured and enabled** site are accepted for extraction. This is controlled by the `allow_all_sites_for_extraction` setting:
