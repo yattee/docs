@@ -13,6 +13,134 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
+### 2.0.0 (274)
+
+**Multiple accounts** — sign in to several Invidious or Piped accounts on the same instance and switch between them from Home, the sidebar or the toolbar. Subscriptions, feed, playlists and watch history follow the selected account, and accounts sync to your other devices through iCloud. Account playlists can now be created and edited from the app, and Invidious watch history is saved to the server. See [Accounts](./app/sources/remote-servers.md#accounts).
+
+**Automation** — Yattee can be controlled from [Shortcuts and Siri](./app/automation/shortcuts.md), [`yattee://` links](./app/automation/url-scheme.md) and [x-callback-url](./app/automation/x-callback-url.md). Yattee 1.x links work again.
+
+#### General
+
+##### New Features
+- Add **multiple accounts** per instance: switch from Home, the sidebar or the toolbar, rename accounts, set them inactive without signing out, and sync them through iCloud; the switcher shows when an account needs attention and can be hidden outside Settings
+- Subscriptions, feed, playlists and watch history follow the selected account
+- Manage Invidious and Piped account playlists: create, rename, edit the description, delete, and add or remove videos; set privacy on Invidious
+- Save played videos to the selected account's **Invidious watch history**; the History screen shows that history and can remove videos from it
+- Choose where a subscription or playlist addition goes with **Subscribe On** in the channel menu and an account picker in Add to Playlist, covering local storage and every signed-in account
+- **Redesigned player details panel** with pages (Info, Comments, Queue and more), configurable presets, per-page element customization, per-orientation visibility and section ordering
+- Add **Shortcuts and Siri** support, including voice commands for player controls and sections
+- Add **URL scheme actions** (play, queue, download, bookmark, subscribe, player controls, open settings) with x-callback-url support; Yattee 1.x links work again
+- Open Link handles more YouTube link types including playlists and @handle channels, opens a single link straight into its details and shows several links as mixed results
+- Play direct media links without Yattee Server
+- Add Hide Shorts toggle in view options
+- Add toolbar layout for video info actions with a configurable primary action
+- Add Remote Servers and File Sources sections on Home
+- Share videos via privacy frontend URLs, with an optional frontend URL for Piped instances
+- Add Refresh, accounts and link actions to the instance browse menu
+- Add Currently Playing toggle and empty-queue placeholder to the queue page
+- Add player notifications (toasts) for actions and errors
+- Show build date in About
+
+##### Improvements
+- Start Play in shuffle mode at a random video in the playlist
+- Configure comments from their row in details panel settings
+- Ask Play Now or Play Next when a video is still playing and the queue is empty
+- Redesign the video info header with collapsible chapters and related videos sections; hide empty descriptions
+- Show video details load failures instead of a blank view
+- Let instance subscription imports choose where subscriptions go
+- Prefer the active instance for playback
+- Re-fetch data from iCloud when the local store was recreated
+- VoiceOver reads the title, channel and duration for video rows
+- Move basic auth credentials to the Security section when editing an instance
+- Use the channel strip when the subscriptions column is too narrow
+- Pinch to pan & scan in the tabletop and corner layouts
+
+##### Bug Fixes
+- Fix a crash opening Search when a video is in history under several sources
+- Fix a crash when syncing watch history for videos with very long IDs
+- Fix a crash with SMB media sources when downloading and playing at the same time
+- Fix Sync Now dropping unsent history, progress and bookmark changes
+- Fix downloads failing until relaunch after toggling cellular downloads
+- Fix the subscription feed not updating after subscribing or unsubscribing
+- Fix Now Playing reporting playback as audio
+- Fix missing comment avatars with newer Invidious versions
+- Fix clipped top controls in corner layout fullscreen
+- Fix video info thumbnails and cards misaligned after resizing or rotation
+- Fix sheets staying open when opening a link from outside the app
+- Fix Video Info and Go to Channel from rows inside the player not collapsing the player
+
+#### iOS
+
+##### New Features
+- Add **iPhone Duo** support: tabletop layout with the video above the hinge, split layout in book posture, sidebar on the inner screen, exterior display support and Foldable playback settings
+- Add **corner player layout** on iPad, now the default for built-in presets
+- Add Navigation setting to keep the tab bar on large screens
+- Add keyboard shortcuts on iPad to toggle the corner layout panels (⌥⌘I info, ⌥⌘S side column, ⌥⌘P both)
+
+##### Improvements
+- Smooth video resizing during animations, such as corner layout panel toggles and rotation
+- Volume and mute respond immediately with the AVFoundation audio output, now preferred
+- Exclude downloaded media from iCloud backups
+
+##### Bug Fixes
+- Fix the app being killed while saving playback progress during suspension
+- Fix a crash rendering video after the app went to the background
+- Fix player controls covered by the camera cutout on the iPhone Duo exterior display
+- Fix the landscape panel opening on every rotation on the iPhone Duo exterior display
+- Fix video jumping when dismissing the portrait details panel
+- Fix portrait panel tabs blocked by the drag handle
+- Fix the player dismiss gesture starting from side sliders and the panel resize handle
+- Fix landscape panel moving while Notification Center is open
+- Fix search field not activating when selecting the Search tab on iOS 27
+
+#### macOS
+
+##### New Features
+- Add **corner player layout**, now the default for built-in presets
+- Add keyboard shortcuts to toggle the corner layout panels (⌥⌘I info, ⌥⌘S side column, ⌥⌘P both)
+- Add Copy Link to the video context menu
+- Show every video info action in the toolbar
+
+##### Improvements
+- Open links with Command-Enter
+- Volume and mute respond immediately with the AVFoundation audio output, now preferred
+
+##### Bug Fixes
+- Fix inline player aspect resizing and playback continuing after its window closes
+- Fix player window oscillating when resizing across the corner layout threshold
+- Fix Picture in Picture sizing and the PiP window staying open after closing the video
+- Fix darker edges beside narrow pages like the empty Search
+
+#### tvOS
+
+##### Improvements
+- Keep Apple TV awake during audio-only playback
+- Darker player with solid focused controls
+- Show link confirmations as alerts
+- Offer Cancel while slow pages load
+
+##### Bug Fixes
+- Fix being locked out of Settings after hiding it from the sidebar
+- Fix white text in video info with the light color scheme
+- Fix focus lost after removing a Continue Watching entry
+
+---
+
+### 2.0.0 (270)
+
+#### Bug Fixes
+- Fix no streams reported from Piped
+- Fix description timestamp links seeking to wrong position for out-of-range values
+- Fix deep link timestamp parsing accepting infinity as seek position
+- Fix audio sample rate label dropping the kHz decimal
+- Fix playback rate display dropping meaningful digits
+- Fix www.duckduckgo.com misrouting to yt-dlp external video extraction
+
+#### Improvements
+- Chunk stateless feed requests to support more than 500 subscriptions
+
+---
+
 ### 2.0.0 (269)
 
 #### New Features
@@ -411,6 +539,42 @@ You can install 2.0 on top of an existing 1.x installation, but all 1.x data (ac
 Check the [GitHub releases](https://github.com/yattee/yattee/releases) for the latest updates.
 
 ## Yattee Server
+
+### 1.0.10
+
+#### Bug Fixes
+- Mark feed and channel videos as not Shorts, and leave playlist and recommendation videos unmarked instead of wrongly marking them as not Shorts
+- Fix missing channel IDs on recommendations when the author isn't linked
+- Report comments turned off as not found instead of a generic error
+
+---
+
+### 1.0.9
+
+#### New Features
+- Add bundled bgutil PO token provider for full formats on age-restricted videos (see [Network](./server/admin/settings.md#network))
+- Detect stale YouTube account cookies and fall back to anonymous access instead of silently degrading to 360p; add **Validate** button and **Cookies expired** badge on the Sites page (see [Cookie Health](./server/admin/credentials.md#cookie-health))
+
+#### Bug Fixes
+- Join multi-audio-track formats by xtags in the hybrid merge
+- Parse top-level lockupViewModel in sidebar recommendations
+
+---
+
+### 1.0.8
+
+#### New Features
+- Add **YouTube IP Family** setting (`YT_IP_FAMILY`) to force IPv4 or IPv6 for YouTube traffic
+
+#### Bug Fixes
+- Resolve channel handles to channel IDs for InnerTube browse
+- Route `/proxy/relay` YouTube traffic through the egress proxy when one is configured
+- Use the configured yt-dlp path and egress proxy for fast downloads
+
+#### Improvements
+- Update yt-dlp to 2026.08.19
+
+---
 
 ### 1.0.7
 
