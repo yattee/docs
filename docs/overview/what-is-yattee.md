@@ -17,6 +17,9 @@ Yattee is a privacy-focused video streaming client for **iOS**, **macOS**, and *
 - **Quality selector** with resolution, codec, bitrate, and size info
 - **Pinch to zoom** and pan with snap options
 - **Lock orientation** and **lock controls**
+- **Details panel** -- Info, Comments, Queue and more pages with configurable presets and section ordering
+- **Corner layout** on iPad and Mac
+- **iPhone Duo** -- tabletop and book posture layouts, exterior display support
 
 ### Media Sources
 - **[Yattee Server](https://github.com/yattee/yattee-server)** -- self-hosted backend powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp), supporting YouTube and 1000+ other sites
@@ -26,6 +29,8 @@ Yattee is a privacy-focused video streaming client for **iOS**, **macOS**, and *
 - **Local folders**, **Samba shares**, and **WebDAV servers**
 - **Network auto-discovery** for Samba and WebDAV
 - **Optional auth** and self-signed certificate support
+- **Multiple accounts** per Invidious or Piped instance, with account playlists and Invidious watch history
+- **Direct media links** -- play them without Yattee Server
 
 ### Customization
 - **Control presets** -- with export/import and iCloud sync
@@ -41,7 +46,7 @@ Yattee is a privacy-focused video streaming client for **iOS**, **macOS**, and *
 
 ### Library and Sync
 - **Bookmarks** -- with tags, notes, search, and multi-source support
-- **Playlists** -- with YouTube/Invidious/Piped import and multi-source support
+- **Playlists** -- with YouTube/Invidious/Piped import and multi-source support, and editing of Invidious and Piped account playlists
 - **Continue Watching** -- with cross-device sync
 - **Downloads** -- background, batch, queue management, resumable
 - **Watch history** -- with configurable retention
@@ -66,6 +71,12 @@ Yattee is a privacy-focused video streaming client for **iOS**, **macOS**, and *
 - **Batch URL input** -- up to 20 URLs
 - **Parallel extraction** via yt-dlp with Yattee Server
 - **Clipboard URL detection**
+- **YouTube playlists and @handle channels** open straight into their details
+- **Share via privacy frontends** -- share links to your Invidious or Piped instance instead of YouTube
+
+### Automation
+- **[Shortcuts and Siri](../app/automation/shortcuts.md)** -- actions and voice commands for playback and player controls
+- **[URL scheme](../app/automation/url-scheme.md)** with **[x-callback-url](../app/automation/x-callback-url.md)** support; Yattee 1.x links work too
 
 ### Advanced
 - **Custom MPV options** management

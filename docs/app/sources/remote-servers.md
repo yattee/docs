@@ -51,7 +51,7 @@ Unlike Invidious and Piped where login is optional, Yattee Server **requires aut
 - Subscriptions and personalized feed
 - Search suggestions as you type
 - Popular/trending videos
-- Optional account login for syncing subscriptions across devices
+- Optional sign-in to one or more [accounts](#accounts) for subscriptions, playlists and watch history
 
 ### Adding an Invidious Instance
 
@@ -59,7 +59,7 @@ Unlike Invidious and Piped where login is optional, Yattee Server **requires aut
 2. Tap **+ Add Source**
 3. Select **Add Remote Server**
 4. Enter the URL of an Invidious instance (e.g., `https://invidious.example.com`)
-5. Optionally log in with your Invidious account credentials
+5. Optionally sign in to your Invidious account (see [Accounts](#accounts))
 6. Tap **Save**
 
 ## Piped
@@ -70,7 +70,7 @@ Unlike Invidious and Piped where login is optional, Yattee Server **requires aut
 
 - Subscriptions and personalized feed
 - Search suggestions as you type
-- Optional account login for syncing subscriptions
+- Optional sign-in to one or more [accounts](#accounts) for subscriptions and playlists
 
 ### Adding a Piped Instance
 
@@ -78,8 +78,63 @@ Unlike Invidious and Piped where login is optional, Yattee Server **requires aut
 2. Tap **+ Add Source**
 3. Select **Add Remote Server**
 4. Enter the URL of a Piped instance (e.g., `https://piped.example.com`)
-5. Optionally log in with your Piped account credentials
+5. Optionally sign in to your Piped account (see [Accounts](#accounts))
 6. Tap **Save**
+
+## Accounts
+
+You can sign in to several Invidious or Piped accounts, including more than one on the same instance. Subscriptions, the feed, playlists and watch history follow the account you select.
+
+### Signing In
+
+1. Open **Settings > Sources** and tap the instance.
+2. In the **Account** section, tap **Log in to Account** (or **Add Account** once one is signed in).
+3. Enter your **Username** and **Password** and tap **Sign In**.
+
+Each account row has a menu with **Use This Account**, **Sign In Again**, **Rename** and **Sign Out & Remove**. A new name is shown on all your devices. Removing an account deletes its saved login and removes it from your other devices too.
+
+### Switching Accounts
+
+Pick the account with the **Account** button:
+
+- **iPhone** -- in the toolbar on Home, Playlists, History and Subscriptions
+- **iPad** -- at the bottom of the sidebar (in the toolbar in compact width)
+- **Mac** -- at the bottom of the sidebar
+- **Apple TV** -- on Playlists, History and Subscriptions
+- **Everywhere** -- **Settings > Accounts > Current Account**
+
+Besides your signed-in accounts, the list includes **Yattee (This Device)**, or **Yattee (iCloud)** with iCloud sync on, for data stored in the app itself. To hide the switcher outside Settings, turn off **Show Account Pickers** at the bottom of **Settings > Accounts**.
+
+### Managing Accounts
+
+**Settings > Accounts** lists every account by source, with its status: **Signed in**, **Sign in required**, **Sign in again**, **Unreachable**, **Source switched off**, **Inactive** or **Source missing**. When a server rejects a login or an account's source is missing, an orange badge appears on **Accounts** in Settings and on the switcher.
+
+Use **Deactivate** to hide an account from the switcher without signing out, and **Activate** to bring it back. Deactivating the selected account switches to Yattee storage.
+
+Accounts sync to your other devices with the **Instances** category in **Settings > iCloud**. On Apple TV, use **Sign In on This Device** if an account synced without its login.
+
+### Choosing Where Things Go
+
+- **Subscriptions** -- in a channel's **Subscription Options** menu, **Subscribe On…** picks the account or Yattee storage to subscribe on.
+- **Playlists** -- the **Add to Playlist** sheet has an **Account** picker for the destination.
+- **Imports** -- **Import Subscriptions** asks for an **Account** when there is more than one destination. See [Importing from Invidious or Piped](../../guides/import-from-instance.md).
+
+### Account Playlists
+
+With an Invidious or Piped account selected, you can manage its playlists on the server:
+
+- **New Playlist** creates one
+- **Edit Playlist** changes the **Playlist Name** and **Description**, and on Invidious the **Visibility** (Public, Unlisted or Private)
+- **Delete Playlist** removes it from your account
+- Videos can be added and removed like in local playlists
+
+### Invidious Watch History
+
+When an Invidious account is selected, videos you play are saved to that account's history on the server, and the **History** screen shows that history. You can remove videos from it there. **Save Watch History** in **Settings > Privacy** controls both local and server history, and Incognito stops both.
+
+### Sharing via the Instance
+
+Turn on **Use Privacy Frontend URLs When Sharing** in **Settings > Navigation** to share links to your instance's web page instead of YouTube. Piped often serves its web frontend from a different address than its API; set it in the **Frontend URL** field when editing the Piped source.
 
 ## PeerTube
 
