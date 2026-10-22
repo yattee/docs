@@ -13,27 +13,33 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
-### 2.0.0 (274)
-
-**Multiple accounts** — sign in to several Invidious or Piped accounts on the same instance and switch between them from Home, the sidebar or the toolbar. Subscriptions, feed, playlists and watch history follow the selected account, and accounts sync to your other devices through iCloud. Account playlists can now be created and edited from the app, and Invidious watch history is saved to the server. See [Accounts](./app/sources/remote-servers.md#accounts).
-
-**Automation** — Yattee can be controlled from [Shortcuts and Siri](./app/automation/shortcuts.md), [`yattee://` links](./app/automation/url-scheme.md) and [x-callback-url](./app/automation/x-callback-url.md). Yattee 1.x links work again.
+### 2.0.0 (275)
+<div class="changelog-hero">
+  <a href="/img/screenshots/app/iphone-duo-home.jpg" target="_blank"><img src="/img/screenshots/app/iphone-duo-home.jpg" alt="iPhone Duo exterior display Home view" /></a>
+  <a href="/img/screenshots/app/iphone-duo-subscriptions.jpg" target="_blank"><img src="/img/screenshots/app/iphone-duo-subscriptions.jpg" alt="iPhone Duo Subscriptions with sidebar" /></a>
+  <a href="/img/screenshots/app/iphone-duo-player.jpg" target="_blank"><img src="/img/screenshots/app/iphone-duo-player.jpg" alt="iPhone Duo player with comments panel" /></a>
+  <a href="/img/screenshots/app/iphone-duo-tabletop.jpg" target="_blank"><img src="/img/screenshots/app/iphone-duo-tabletop.jpg" alt="iPhone Duo half-folded player with controls on the lower half" /></a>
+</div>
 
 #### General
 
 ##### New Features
-- Add **multiple accounts** per instance: switch from Home, the sidebar or the toolbar, rename accounts, set them inactive without signing out, and sync them through iCloud; the switcher shows when an account needs attention and can be hidden outside Settings
-- Subscriptions, feed, playlists and watch history follow the selected account
-- Manage Invidious and Piped account playlists: create, rename, edit the description, delete, and add or remove videos; set privacy on Invidious
-- Save played videos to the selected account's **Invidious watch history**; the History screen shows that history and can remove videos from it
-- Choose where a subscription or playlist addition goes with **Subscribe On** in the channel menu and an account picker in Add to Playlist, covering local storage and every signed-in account
+- **Multiple accounts** — sign in to several Invidious or Piped accounts, including more than one on the same instance (see [Accounts](./app/sources/remote-servers.md#accounts))
+  - Switch from Home, the sidebar or the toolbar, rename accounts, set them inactive without signing out, and sync them through iCloud; the switcher shows when an account needs attention and can be hidden outside Settings
+  - Subscriptions, feed, playlists and watch history follow the selected account
+  - Manage Invidious and Piped account playlists: create, rename, edit the description, delete, and add or remove videos; set privacy on Invidious
+  - Save played videos to the selected account's Invidious watch history; the History screen shows that history and can remove videos from it
+  - Choose where a subscription or playlist addition goes with **Subscribe On** in the channel menu and an account picker in Add to Playlist, covering local storage and every signed-in account
+- **Automation** — control Yattee from other apps, Shortcuts and Siri
+  - [Shortcuts and Siri](./app/automation/shortcuts.md) support, including voice commands for player controls and sections
+  - [URL scheme](./app/automation/url-scheme.md) actions (play, queue, download, bookmark, subscribe, player controls, open settings) with [x-callback-url](./app/automation/x-callback-url.md) support
+  - Yattee 1.x links work again
 - **Redesigned player details panel** with pages (Info, Comments, Queue and more), configurable presets, per-page element customization, per-orientation visibility and section ordering
-- Add **Shortcuts and Siri** support, including voice commands for player controls and sections
-- Add **URL scheme actions** (play, queue, download, bookmark, subscribe, player controls, open settings) with x-callback-url support; Yattee 1.x links work again
 - Open Link handles more YouTube link types including playlists and @handle channels, opens a single link straight into its details and shows several links as mixed results
 - Play direct media links without Yattee Server
 - Add Hide Shorts toggle in view options
-- Add toolbar layout for video info actions with a configurable primary action
+- **Video info actions in the toolbar** — Play, Download, Share, Add to Playlist and Bookmark can move from the button rows to the navigation bar, with a pinned **Primary Action** and the rest in the ⋯ menu (**Settings > Navigation > Video Info**)
+  - Toolbar with Download pinned is the new default on iOS and macOS; tap the thumbnail to play the video
 - Add Remote Servers and File Sources sections on Home
 - Share videos via privacy frontend URLs, with an optional frontend URL for Piped instances
 - Add Refresh, accounts and link actions to the instance browse menu
@@ -85,8 +91,6 @@ This page tracks notable changes to the Yattee ecosystem.
 ##### Bug Fixes
 - Fix the app being killed while saving playback progress during suspension
 - Fix a crash rendering video after the app went to the background
-- Fix player controls covered by the camera cutout on the iPhone Duo exterior display
-- Fix the landscape panel opening on every rotation on the iPhone Duo exterior display
 - Fix video jumping when dismissing the portrait details panel
 - Fix portrait panel tabs blocked by the drag handle
 - Fix the player dismiss gesture starting from side sliders and the panel resize handle
