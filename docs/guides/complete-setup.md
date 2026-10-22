@@ -43,6 +43,7 @@ Install the Yattee app on your device:
 
 - **iOS / iPadOS / tvOS / macOS** -- join the [TestFlight beta](https://yattee.stream/beta2)
 - **macOS (alternative)** -- download the latest beta from [GitHub Releases](https://github.com/yattee/yattee/releases)
+- **iOS / iPadOS (alternative)** -- install from the [AltStore source](../app/altstore.md) (no iCloud sync)
 {/* - **App Store** -- stable releases for iOS, macOS, and tvOS */}
 
 ## Step 5: Add Your Server as a Source

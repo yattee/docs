@@ -8,6 +8,11 @@ const sidebars: SidebarsConfig = {
       label: 'Getting Started',
     },
     {
+      type: 'doc',
+      id: 'app/altstore',
+      label: 'Installing with AltStore',
+    },
+    {
       type: 'category',
       label: 'Sources',
       collapsed: false,
