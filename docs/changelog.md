@@ -13,6 +13,36 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
+### 2.0.0 (276)
+
+#### General
+
+##### New Features
+- Add **Performance Logging** in **Settings → Advanced → Developer**, logging CPU, energy, memory and activity every 5 seconds to help diagnose battery and performance issues (see [Reporting Issues](./guides/reporting-issues.md#gathering-logs))
+
+##### Improvements
+- Lower CPU usage while playing and paused, and during audio-only playback
+- Raise the Open Link limit from 20 to 200 URLs
+- Keep logs from the previous session in exports, so they survive the app being closed
+- Don't animate the video info carousel into place when it first opens
+
+#### iOS
+
+##### Improvements
+- Stop decoding video and re-rendering hidden player UI during background playback, reducing battery use
+- Smoother, lighter mini player title scrolling
+- Log background playback diagnostics when logging is enabled
+
+##### Bug Fixes
+- Fix player brightness controls on iPhone Duo
+
+#### tvOS
+
+##### Improvements
+- Smoother, lighter mini player title scrolling
+
+---
+
 ### 2.0.0 (275)
 <div class="changelog-hero">
   <a href="/img/screenshots/app/iphone-duo-home.jpg" target="_blank"><img src="/img/screenshots/app/iphone-duo-home.jpg" alt="iPhone Duo exterior display Home view" /></a>

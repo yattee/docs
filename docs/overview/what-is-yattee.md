@@ -68,7 +68,7 @@ Yattee is a privacy-focused video streaming client for **iOS**, **macOS**, and *
 - **Configurable retention** -- watch history and search history limits
 
 ### Open Links
-- **Batch URL input** -- up to 20 URLs
+- **Batch URL input** -- up to 200 URLs
 - **Parallel extraction** via yt-dlp with Yattee Server
 - **Clipboard URL detection**
 - **YouTube playlists and @handle channels** open straight into their details

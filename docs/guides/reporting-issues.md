@@ -25,11 +25,14 @@ The app has a built-in logging system that captures detailed information about w
 1. Open **Settings → Advanced → Developer**.
 2. Enable **Enable Logging**.
 3. *(Optional)* Enable **Verbose MPV Logging** or **Verbose Remote Control Logging** if the issue is related to playback or remote control.
+   - *(Optional)* Enable **Performance Logging** if the issue is about battery drain, heat or sluggishness. It logs CPU, energy, memory and activity every 5 seconds, so leave it off otherwise.
 4. **Reproduce the issue.**
 5. Go back to **Developer Settings → View Logs**.
 6. Export logs:
    - **iOS / macOS:** Tap **Export Logs** → use the Share Sheet to save or send the file.
    - **tvOS:** Tap **Export Logs** → scan the QR code or visit the displayed URL from another device.
+
+Logs are saved per session, and the export includes the previous session too, so you can still send them if the app was closed or swiped away while the issue happened. On iOS, background playback events (audio session, suspension, power state) are logged as well, which helps with issues that happen while the app is in the background.
 
 ### What to Include
 
