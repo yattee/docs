@@ -13,6 +13,22 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
+### 2.0.0 (277)
+
+#### General
+
+##### Improvements
+- When logging is enabled, log details and show an alert asking to export logs if hardware video decoding falls back to software during playback
+
+#### iOS
+
+##### Bug Fixes
+- Fix high CPU usage and the phone heating up when playback stays paused in the background after the screen is locked
+- Fix high CPU usage when the audio output changes (e.g. connecting or disconnecting headphones) while playback is paused
+- Attempt to fix a crash shortly after launch by opening the app's database later in startup
+
+---
+
 ### 2.0.0 (276)
 
 #### General
