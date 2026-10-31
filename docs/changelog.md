@@ -13,7 +13,7 @@ This page tracks notable changes to the Yattee ecosystem.
 
 ## Yattee App
 
-### 2.0.0 (277)
+### 2.0.0 (278)
 
 #### General
 
